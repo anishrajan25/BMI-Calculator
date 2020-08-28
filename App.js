@@ -13,7 +13,7 @@ const App = () => {
       backgroundColor = "#080C1E"
       placement= 'left'
       statusBarProps={{barStyle: 'light-content', backgroundColor: '#080C1E'}}
-      containerStyle={{borderWidth: 0}}
+      containerStyle={{borderBottomWidth: 0, marginTop: 2}}
       leftComponent={
         <View style={{ flex: 1 }}>
           <Text style={{color: 'white', fontSize: 20}}>BMI Calculator</Text>
