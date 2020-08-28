@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#080C1E"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -18,6 +18,9 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.dev.anishrajan.bmicalculator"
     }
   }
 }
