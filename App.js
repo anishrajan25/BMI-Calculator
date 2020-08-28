@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import {Slider, StyleSheet, Text, View, StatusBar, TouchableOpacity } from 'react-native';
+import {Slider, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import {  Icon, Header, Button } from "react-native-elements";
 
 const App = () => {
 
   const [height, setHeight] = useState(150);
   const [gender, setGender] = useState('');
+  const [age, setAge] = useState(1);
 
   return(
     <View style={styles.container}>
@@ -72,7 +73,7 @@ const App = () => {
             <Text style={{...styles.inputHeading, fontSize: 15}}>AGE</Text>
           </View>
           <View style={{flex: 4, justifyContent:'center'}}>
-            <Text style={{...styles.text, fontSize: 48}} >27</Text>
+            <Text style={{...styles.text, fontSize: 48}} >{age}</Text>
           </View>
           <View style={{ flex: 3, flexDirection: 'row',justifyContent:'center', alignItems: 'center'}}>
             <View style={{flex: 4}}>
@@ -82,7 +83,8 @@ const App = () => {
                 size={20}
                 name='minus'
                 type='font-awesome-5'
-                color='#25A1CF'  
+                color='#25A1CF'
+                onPress={() => setAge( age===1 ? age : age-1 )}  
               />
             </View>
             <View style={{flex: 3}}>
@@ -93,6 +95,7 @@ const App = () => {
                 name='plus'
                 type='font-awesome-5'
                 color='#25A1CF'  
+                onPress={() => setAge( age+1 )}
               />
             </View>
           </View>
