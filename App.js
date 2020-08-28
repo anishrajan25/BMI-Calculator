@@ -99,8 +99,40 @@ const App = () => {
             
           </View>
         </View>
-        <View style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center'}}>
-          <Text>WEIGHT</Text>
+
+        <View style={{...styles.inputView, justifyContent: 'center', flex: 1, flexDirection: 'column', alignItems: 'center'}}>
+          <View style={{flex: 1}}>
+            <Text style={{...styles.inputHeading, fontSize: 15}}>WEIGHT</Text>
+          </View>
+          
+          <View style={{flex: 4, justifyContent:'center'}}>
+            <Text style={{...styles.text, fontSize: 48}} >78</Text>
+          </View>
+          
+          <View style={{ flex: 3, flexDirection: 'row',justifyContent:'center', alignItems: 'center'}}>
+            <View style={{flex: 4}}>
+              <Icon
+                raised
+                reverse
+                size={20}
+                name='minus'
+                type='font-awesome-5'
+                color='#25A1CF'  
+              />
+            </View>
+            
+            <View style={{flex: 3}}>
+              <Icon
+                raised
+                reverse
+                size={20}
+                name='plus'
+                type='font-awesome-5'
+                color='#25A1CF'  
+              />
+            </View>
+            
+          </View>
         </View>
       </View>
       <View style={{flex: 1 }}></View>
