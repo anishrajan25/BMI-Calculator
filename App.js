@@ -29,7 +29,7 @@ const App = () => {
           onPress={() => setGender(gender==='male'? '' : 'male')}
         >
           <Icon
-            size={50}
+            size={55}
             name='mars'
             type='font-awesome-5'
             color='#ffffff'  
@@ -41,7 +41,7 @@ const App = () => {
           onPress={() => setGender(gender==='female'? '' : 'female')}
         >
           <Icon
-            size={50}
+            size={55}
             name='venus'
             type='font-awesome-5'
             color='#ffffff'  
@@ -49,7 +49,7 @@ const App = () => {
           <Text style={{color: 'white', marginTop: 10}}>FEMALE</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.inputView}>
+      <View style={{...styles.inputView, flex: 3}}>
         <Text style={styles.inputHeading}>HEIGHT</Text>
         <Text style={styles.text}>{String(height) + ' cm'}</Text>
         <Slider
@@ -65,8 +65,39 @@ const App = () => {
         />
       </View>
       <View style={{justifyContent: 'center', flex: 4, flexDirection: 'row'}}>
-        <View style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center'}}>
-          <Text>AGE</Text>
+        <View style={{...styles.inputView, justifyContent: 'center', flex: 1, flexDirection: 'column', alignItems: 'center'}}>
+          <View style={{flex: 1}}>
+            <Text style={{...styles.inputHeading, fontSize: 15}}>AGE</Text>
+          </View>
+          
+          <View style={{flex: 4, justifyContent:'center'}}>
+            <Text style={{...styles.text, fontSize: 48}} >27</Text>
+          </View>
+          
+          <View style={{ flex: 3, flexDirection: 'row',justifyContent:'center', alignItems: 'center'}}>
+            <View style={{flex: 4}}>
+              <Icon
+                raised
+                reverse
+                size={20}
+                name='minus'
+                type='font-awesome-5'
+                color='#25A1CF'  
+              />
+            </View>
+            
+            <View style={{flex: 3}}>
+              <Icon
+                raised
+                reverse
+                size={20}
+                name='plus'
+                type='font-awesome-5'
+                color='#25A1CF'  
+              />
+            </View>
+            
+          </View>
         </View>
         <View style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center'}}>
           <Text>WEIGHT</Text>
@@ -84,7 +115,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 50,
-    textAlign: 'center',
     color: '#ffffff',
     fontWeight: 'bold',
     marginVertical: 5
