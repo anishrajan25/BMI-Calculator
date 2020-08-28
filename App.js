@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Slider, StyleSheet, Text, View, TouchableOpacity, TouchableHighlight, Modal } from 'react-native';
-import {  Icon, Header, Button, Overlay } from "react-native-elements";
+import {  Icon, Header, Button, Avatar } from "react-native-elements";
 import * as Animatable from "react-native-animatable";
 
 const App = () => {
@@ -52,15 +52,16 @@ const App = () => {
         onRequestClose={toggleInfoModal}
       >
         <View style={{...styles.container, justifyContent: 'center', alignContent: 'center', marginTop: 60}}>
-          <View style={{...styles.inputView, margin: 30, marginVertical: 50}}>
+          <View style={{...styles.inputView, margin: 30, marginVertical: 100}}>
+            <Avatar rounded source={ require('./assets/IMG-20180921-WA0019-01.jpeg')} size='xlarge' />
             <View style={{flex: 2, justifyContent: 'center', alignContent: 'center'}}>
-              <Text style={{  color: 'white', fontSize: 25 }}>Analysis Complete</Text>
+              <Text style={{  color: 'white', fontSize: 25 }}></Text>
 
             </View>
             <View style={{flex: 9, justifyContent: 'center', alignContent: 'center'}}>
-              <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>Your Body Mass Index Is</Text>
-              <Text style={{ textAlign: 'center', color: 'white', fontSize: 50, margin: 5, fontWeight: 'bold' }}>24.5</Text>
-              <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>You are Normal</Text>
+              <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}></Text>
+              <Text style={{ textAlign: 'center', color: 'white', fontSize: 50, margin: 5, fontWeight: 'bold' }}></Text>
+              <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}></Text>
 
             </View>
             <View style={{flex: 3, justifyContent: 'center', alignContent: 'center'}}>
