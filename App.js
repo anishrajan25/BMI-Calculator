@@ -15,19 +15,6 @@ const App = () => {
   const [bmiStatus, setBmiStatus] = useState('Normal');
 
   const calculateBMI = () => {
-    setBmi((weight/Math.pow(height/100,2)).toFixed(2));
-    if(bmi<18.50) {
-      setBmiStatus('Underweight');
-    }
-    else if ( bmi>=18.50 && bmi<=24.90) {
-      setBmiStatus('Normal');
-    }
-    else {
-      setBmiStatus('Overweight');
-    }
-  }
-
-  const toggleModal = () => {
     var temp = (weight/Math.pow(height/100,2)).toFixed(2);
     if(temp<18.50) {
       setBmiStatus('Underweight');
@@ -39,10 +26,11 @@ const App = () => {
       setBmiStatus('Overweight');
     }
     setBmi(temp);
-    
-    setVisible(!visible);
+  }
 
-    
+  const toggleModal = () => {
+    calculateBMI();
+    setVisible(!visible);    
   };
 
   const toggleInfoModal = () => {
