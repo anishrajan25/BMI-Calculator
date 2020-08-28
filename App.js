@@ -159,18 +159,25 @@ const App = () => {
         >
           <View style={{...styles.container, justifyContent: 'center', alignContent: 'center', marginTop: 60}}>
             <View style={{...styles.inputView, margin: 30, marginVertical: 50}}>
-              <View style={{flex: 1, justifyContent: 'center', alignContent: 'center'}}>
-                <Text style={{  color: 'white', fontSize: 20 }}>Analysis Complete</Text>
+              <View style={{flex: 2, justifyContent: 'center', alignContent: 'center'}}>
+                <Text style={{  color: 'white', fontSize: 25 }}>Analysis Complete</Text>
 
               </View>
               <View style={{flex: 9, justifyContent: 'center', alignContent: 'center'}}>
-                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20 }}>Your Body Mass Index Is</Text>
-                <Text style={{ textAlign: 'center', color: 'white', fontSize: 50 }}>24.5</Text>
-                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20 }}>You are Normal</Text>
+                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>Your Body Mass Index Is</Text>
+                <Text style={{ textAlign: 'center', color: 'white', fontSize: 50, margin: 5, fontWeight: 'bold' }}>24.5</Text>
+                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>You are Normal</Text>
 
               </View>
-              <View style={{flex: 1, justifyContent: 'center', alignContent: 'center'}}>
-                <Text style={{  color: 'white', fontSize: 20 }}>Button</Text>
+              <View style={{flex: 3, justifyContent: 'center', alignContent: 'center'}}>
+                <Button
+                  title="Calculate Another"
+                  containerStyle={{alignSelf: 'center'}}
+                  buttonStyle={{backgroundColor: '#25A1CF', paddingHorizontal: 30, paddingVertical: 10, borderRadius:20}}
+                  titleStyle={{fontSize: 18}}
+                  raised
+                  onPress={toggleModal}
+                />
 
               </View>
             </View>
