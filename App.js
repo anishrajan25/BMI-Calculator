@@ -28,8 +28,15 @@ const App = () => {
     setBmi(temp);
   }
 
+  const reset = () => {
+    setHeight(150);
+    setAge(25);
+    setWeight(50);
+    setGender('');
+  }
+
   const toggleModal = () => {
-    calculateBMI();
+    visible ? reset() : calculateBMI();
     setVisible(!visible);    
   };
 
