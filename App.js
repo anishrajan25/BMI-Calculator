@@ -76,7 +76,10 @@ const App = () => {
         onRequestClose={toggleInfoModal}
       >
         <View style={{...styles.container, justifyContent: 'center', alignContent: 'center', marginTop: 'auto'}}>
-          <View style={{...styles.inputView, margin: 30, marginVertical: 100, paddingHorizontal: 20}}>
+          <View style={{flex: 1, justifyContent: 'center', alignContent: 'center'}}>
+            <Text style={{fontSize: 30, color: 'white', textAlign: "center"}}>About BMI Calculator</Text>
+          </View>
+          <View style={{...styles.inputView, flex: 8,marginHorizontal: 20, marginVertical: 30, paddingHorizontal: 20}}>
             <Avatar rounded source={ require('./assets/IMG-20180921-WA0019-01.jpeg')} size='xlarge' />
             <View style={{flex: 4, justifyContent: 'center', alignContent: 'center'}}>
               <Text style={{  color: 'white', fontSize: 15, margin: 5, textAlign: 'center', paddingTop: 30 }}>One of the first few apps I made while on my journey to learn React Native</Text>
