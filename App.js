@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import {Slider, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import {  Icon, Header, Button } from "react-native-elements";
+import {  Icon, Header, Button, Overlay } from "react-native-elements";
+import * as Animatable from "react-native-animatable";
 
 const App = () => {
 
   const [height, setHeight] = useState(150);
   const [gender, setGender] = useState('');
-  const [age, setAge] = useState(1);
-  const [weight, setWeight] = useState(1);
+  const [age, setAge] = useState(25);
+  const [weight, setWeight] = useState(50);
+  const [visible, setVisible] = useState(false);
+
+  const toggleOverlay = () => {
+    setVisible(!visible);
+  };
 
   return(
     <View style={styles.container}>
@@ -143,7 +149,20 @@ const App = () => {
           buttonStyle={{backgroundColor: '#25A1CF', paddingHorizontal: 30, paddingVertical: 10, borderRadius:20}}
           titleStyle={{fontSize: 18}}
           raised
+          onPress={toggleOverlay}
         />
+        <Overlay 
+          isVisible={visible} 
+          onBackdropPress={toggleOverlay}
+          overlayStyle={{backgroundColor: 'rgba(52,100,158,1)', justifyContent: 'center', alignItems: 'center', borderRadius: 20 }}
+        >
+          <Animatable.View animation='slideInUp' duration={1000} style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Text>Analysis Complete</Text>
+            <Text>Your Body Mass Index Is</Text>
+            <Text>24.5</Text>
+            <Text>You are Normal</Text>
+          </Animatable.View>
+        </Overlay>
       </View>
     </View>
   );
