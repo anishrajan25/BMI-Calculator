@@ -16,7 +16,15 @@ const App = () => {
 
   const calculateBMI = () => {
     setBmi((weight/Math.pow(height/100,2)).toFixed(2));
-    
+    if(bmi<18.50) {
+      setBmiStatus('Underweight');
+    }
+    else if ( bmi>=18.50 && bmi<=24.90) {
+      setBmiStatus('Normal');
+    }
+    else {
+      setBmiStatus('Overweight');
+    }
   }
 
   const toggleModal = () => {
