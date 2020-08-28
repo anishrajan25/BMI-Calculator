@@ -28,7 +28,17 @@ const App = () => {
   }
 
   const toggleModal = () => {
-    setBmi((weight/Math.pow(height/100,2)).toFixed(2));
+    var temp = (weight/Math.pow(height/100,2)).toFixed(2);
+    if(temp<18.50) {
+      setBmiStatus('Underweight');
+    }
+    else if ( temp>=18.50 && temp<=24.90) {
+      setBmiStatus('Normal');
+    }
+    else {
+      setBmiStatus('Overweight');
+    }
+    setBmi(temp);
     
     setVisible(!visible);
 
@@ -233,7 +243,7 @@ const App = () => {
               <View style={{flex: 9, justifyContent: 'center', alignContent: 'center'}}>
                 <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>Your Body Mass Index Is</Text>
                 <Text style={{ textAlign: 'center', color: 'white', fontSize: 50, margin: 5, fontWeight: 'bold' }}>{bmi}</Text>
-                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>You are Normal</Text>
+                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>You are {bmiStatus}</Text>
 
               </View>
               <View style={{flex: 3, justifyContent: 'center', alignContent: 'center'}}>
