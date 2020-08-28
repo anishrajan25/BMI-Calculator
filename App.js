@@ -6,7 +6,7 @@ import * as Animatable from "react-native-animatable";
 const App = () => {
 
   const [height, setHeight] = useState(150);
-  const [gender, setGender] = useState('');
+  const [gender, setGender] = useState('male');
   const [age, setAge] = useState(25);
   const [weight, setWeight] = useState(50);
   const [visible, setVisible] = useState(false);
@@ -32,7 +32,7 @@ const App = () => {
     setHeight(150);
     setAge(25);
     setWeight(50);
-    setGender('');
+    setGender('male');
   }
 
   const toggleModal = () => {
