@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Slider, StyleSheet, Text, View, StatusBar, TouchableOpacity } from 'react-native';
-import {  Icon, Header } from "react-native-elements";
+import {  Icon, Header, Button } from "react-native-elements";
 
 const App = () => {
 
@@ -10,18 +10,18 @@ const App = () => {
   return(
     <View style={styles.container}>
       <Header
-      backgroundColor = "#080C1E"
-      placement= 'left'
-      statusBarProps={{barStyle: 'light-content', backgroundColor: '#080C1E'}}
-      containerStyle={{borderBottomWidth: 0, marginTop: 2}}
-      leftComponent={
-        <View style={{ flex: 1 }}>
-          <Text style={{color: 'white', fontSize: 20}}>BMI Calculator</Text>
-          <Text style={{color: 'white', fontSize: 12}}>by anishrajan</Text>
-        </View>
-      }
-      rightComponent={{ icon: 'info', color: '#fff' }}
-    />
+        backgroundColor = "#080C1E"
+        placement= 'left'
+        statusBarProps={{barStyle: 'light-content', backgroundColor: '#080C1E'}}
+        containerStyle={{borderBottomWidth: 0, marginTop: 2}}
+        leftComponent={
+          <View style={{ flex: 1 }}>
+            <Text style={{color: 'white', fontSize: 20}}>BMI Calculator</Text>
+            <Text style={{color: 'white', fontSize: 12}}>by anishrajan</Text>
+          </View>
+        }
+        rightComponent={{ icon: 'info', color: '#fff' }}
+      />
       
       <View style={{justifyContent: 'center', flex: 4, flexDirection: 'row'}}>
         <TouchableOpacity 
@@ -49,6 +49,7 @@ const App = () => {
           <Text style={{color: 'white', marginTop: 10}}>FEMALE</Text>
         </TouchableOpacity>
       </View>
+
       <View style={{...styles.inputView, flex: 3}}>
         <Text style={styles.inputHeading}>HEIGHT</Text>
         <Text style={styles.text}>{String(height) + ' cm'}</Text>
@@ -64,16 +65,15 @@ const App = () => {
           value={height}
         />
       </View>
+
       <View style={{justifyContent: 'center', flex: 4, flexDirection: 'row'}}>
         <View style={{...styles.inputView, justifyContent: 'center', flex: 1, flexDirection: 'column', alignItems: 'center'}}>
           <View style={{flex: 1}}>
             <Text style={{...styles.inputHeading, fontSize: 15}}>AGE</Text>
           </View>
-          
           <View style={{flex: 4, justifyContent:'center'}}>
             <Text style={{...styles.text, fontSize: 48}} >27</Text>
           </View>
-          
           <View style={{ flex: 3, flexDirection: 'row',justifyContent:'center', alignItems: 'center'}}>
             <View style={{flex: 4}}>
               <Icon
@@ -85,7 +85,6 @@ const App = () => {
                 color='#25A1CF'  
               />
             </View>
-            
             <View style={{flex: 3}}>
               <Icon
                 raised
@@ -96,7 +95,6 @@ const App = () => {
                 color='#25A1CF'  
               />
             </View>
-            
           </View>
         </View>
 
@@ -104,11 +102,9 @@ const App = () => {
           <View style={{flex: 1}}>
             <Text style={{...styles.inputHeading, fontSize: 15}}>WEIGHT</Text>
           </View>
-          
           <View style={{flex: 4, justifyContent:'center'}}>
             <Text style={{...styles.text, fontSize: 48}} >78</Text>
           </View>
-          
           <View style={{ flex: 3, flexDirection: 'row',justifyContent:'center', alignItems: 'center'}}>
             <View style={{flex: 4}}>
               <Icon
@@ -120,7 +116,6 @@ const App = () => {
                 color='#25A1CF'  
               />
             </View>
-            
             <View style={{flex: 3}}>
               <Icon
                 raised
@@ -131,11 +126,19 @@ const App = () => {
                 color='#25A1CF'  
               />
             </View>
-            
           </View>
         </View>
       </View>
-      <View style={{flex: 1 }}></View>
+
+      <View style={{flex: 2, justifyContent: 'center' }}>
+        <Button
+          title="Calculate BMI"
+          containerStyle={{alignSelf: 'center'}}
+          buttonStyle={{backgroundColor: '#25A1CF', paddingHorizontal: 30, paddingVertical: 10, borderRadius:20}}
+          titleStyle={{fontSize: 18}}
+          raised
+        />
+      </View>
     </View>
   );
 }
