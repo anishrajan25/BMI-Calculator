@@ -65,7 +65,14 @@ const App = () => {
           value={height}
         />
       </View>
-      <View style={{flex: 4 }}></View>
+      <View style={{justifyContent: 'center', flex: 4, flexDirection: 'row'}}>
+        <View style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+          <Text>AGE</Text>
+        </View>
+        <View style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center'}}>
+          <Text>WEIGHT</Text>
+        </View>
+      </View>
       <View style={{flex: 1 }}></View>
     </View>
   );
