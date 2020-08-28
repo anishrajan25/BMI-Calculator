@@ -26,8 +26,8 @@ const App = () => {
       </View>
       <View style={{justifyContent: 'center', flex: 4, flexDirection: 'row'}}>
         <TouchableOpacity 
-          style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center', backgroundColor: gender === 'male' ? 'rgba(24,29,52,1)': 'rgba(24,29,52,0.5)'}}
-          onPress={() => setGender('male')}
+          style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center', backgroundColor: gender === 'male' ? 'rgba(24,29,52,0.8)': 'rgba(24,29,52,0.5)'}}
+          onPress={() => setGender(gender==='male'? '' : 'male')}
         >
           <Icon
             size={50}
@@ -38,8 +38,8 @@ const App = () => {
           <Text style={{color: 'white', marginTop: 10}}>MALE</Text>
         </TouchableOpacity>
         <TouchableOpacity 
-          style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center', backgroundColor: gender === 'female' ? 'rgba(24,29,52,1)': 'rgba(24,29,52,0.5)' }}
-          onPress={() => setGender('female')}
+          style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center', backgroundColor: gender === 'female' ? 'rgba(24,29,52,0.8)': 'rgba(24,29,52,0.5)' }}
+          onPress={() => setGender(gender==='female'? '' : 'female')}
         >
           <Icon
             size={50}
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     marginVertical: 5
   },
   inputView: {
-    backgroundColor: 'rgba(24,29,52,0.5)',
+    backgroundColor: 'rgba(24,29,52,0.8)',
     margin: 10,
     padding: 10,
     justifyContent: 'center',
