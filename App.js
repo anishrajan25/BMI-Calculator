@@ -28,8 +28,11 @@ const App = () => {
   }
 
   const toggleModal = () => {
-    visible !== null ? calculateBMI() : null ;
+    setBmi((weight/Math.pow(height/100,2)).toFixed(2));
+    
     setVisible(!visible);
+
+    
   };
 
   const toggleInfoModal = () => {
@@ -122,7 +125,7 @@ const App = () => {
         </TouchableOpacity>
       </View>
 
-      <View style={{...styles.inputView, flex: 3}}>
+      <View style={{...styles.inputView, flex: 4}}>
         <Text style={styles.inputHeading}>HEIGHT</Text>
         <Text style={styles.text}>{String(height) + ' cm'}</Text>
         <Slider
@@ -138,7 +141,7 @@ const App = () => {
         />
       </View>
 
-      <View style={{justifyContent: 'center', flex: 4, flexDirection: 'row'}}>
+      <View style={{justifyContent: 'center', flex: 5, flexDirection: 'row'}}>
         <View style={{...styles.inputView, justifyContent: 'center', flex: 1, flexDirection: 'column', alignItems: 'center'}}>
           <View style={{flex: 1}}>
             <Text style={{...styles.inputHeading, fontSize: 15}}>AGE</Text>
@@ -230,7 +233,7 @@ const App = () => {
               <View style={{flex: 9, justifyContent: 'center', alignContent: 'center'}}>
                 <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>Your Body Mass Index Is</Text>
                 <Text style={{ textAlign: 'center', color: 'white', fontSize: 50, margin: 5, fontWeight: 'bold' }}>{bmi}</Text>
-                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>You are {bmiStatus}</Text>
+                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>You are Normal</Text>
 
               </View>
               <View style={{flex: 3, justifyContent: 'center', alignContent: 'center'}}>
