@@ -12,9 +12,11 @@ const App = () => {
   const [visible, setVisible] = useState(false);
   const [infoModal, setInfoModal] = useState(false);
   const [bmi, setBmi] = useState((weight/Math.pow(height/100,2)).toFixed(2));
+  const [bmiStatus, setBmiStatus] = useState('Normal');
 
   const calculateBMI = () => {
-    console.log('it works');
+    setBmi((weight/Math.pow(height/100,2)).toFixed(2));
+    
   }
 
   const toggleModal = () => {
@@ -220,7 +222,7 @@ const App = () => {
               <View style={{flex: 9, justifyContent: 'center', alignContent: 'center'}}>
                 <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>Your Body Mass Index Is</Text>
                 <Text style={{ textAlign: 'center', color: 'white', fontSize: 50, margin: 5, fontWeight: 'bold' }}>{bmi}</Text>
-                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>You are Normal</Text>
+                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>You are {bmiStatus}</Text>
 
               </View>
               <View style={{flex: 3, justifyContent: 'center', alignContent: 'center'}}>
