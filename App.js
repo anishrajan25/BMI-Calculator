@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Slider, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import {Slider, StyleSheet, Text, View, TouchableOpacity, TouchableHighlight, Modal } from 'react-native';
 import {  Icon, Header, Button, Overlay } from "react-native-elements";
 import * as Animatable from "react-native-animatable";
 
@@ -11,7 +11,7 @@ const App = () => {
   const [weight, setWeight] = useState(50);
   const [visible, setVisible] = useState(false);
 
-  const toggleOverlay = () => {
+  const toggleModal = () => {
     setVisible(!visible);
   };
 
@@ -149,20 +149,34 @@ const App = () => {
           buttonStyle={{backgroundColor: '#25A1CF', paddingHorizontal: 30, paddingVertical: 10, borderRadius:20}}
           titleStyle={{fontSize: 18}}
           raised
-          onPress={toggleOverlay}
+          onPress={toggleModal}
         />
-        <Overlay 
-          isVisible={visible} 
-          onBackdropPress={toggleOverlay}
-          overlayStyle={{backgroundColor: 'rgba(52,100,158,1)', justifyContent: 'center', alignItems: 'center', borderRadius: 20 }}
+        <Modal
+          animationType="slide"
+          visible={visible}
+          transparent={true}
+          onRequestClose={toggleModal}
         >
-          <Animatable.View animation='slideInUp' duration={1000} style={{justifyContent: 'center', alignItems: 'center'}}>
-            <Text>Analysis Complete</Text>
-            <Text>Your Body Mass Index Is</Text>
-            <Text>24.5</Text>
-            <Text>You are Normal</Text>
-          </Animatable.View>
-        </Overlay>
+          <View style={{...styles.container, justifyContent: 'center', alignContent: 'center', marginTop: 60}}>
+            <View style={{...styles.inputView, margin: 30, marginVertical: 50}}>
+              <View style={{flex: 1, justifyContent: 'center', alignContent: 'center'}}>
+                <Text style={{  color: 'white', fontSize: 20 }}>Analysis Complete</Text>
+
+              </View>
+              <View style={{flex: 9, justifyContent: 'center', alignContent: 'center'}}>
+                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20 }}>Your Body Mass Index Is</Text>
+                <Text style={{ textAlign: 'center', color: 'white', fontSize: 50 }}>24.5</Text>
+                <Text style={{ textAlign: 'center', color: 'white', fontSize: 20 }}>You are Normal</Text>
+
+              </View>
+              <View style={{flex: 1, justifyContent: 'center', alignContent: 'center'}}>
+                <Text style={{  color: 'white', fontSize: 20 }}>Button</Text>
+
+              </View>
+            </View>
+          </View>
+      </Modal>
+        
       </View>
     </View>
   );
@@ -214,4 +228,18 @@ export default App;
   </View>
 </View>
 
+
+
+<Overlay 
+          isVisible={visible} 
+          onBackdropPress={toggleOverlay}
+          overlayStyle={{backgroundColor: 'rgba(52,100,158,1)', justifyContent: 'center', alignItems: 'center', borderRadius: 20 }}
+        >
+          <Animatable.View animation='slideInUp' duration={1000} style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Text>Analysis Complete</Text>
+            <Text>Your Body Mass Index Is</Text>
+            <Text>24.5</Text>
+            <Text>You are Normal</Text>
+          </Animatable.View>
+        </Overlay>
 */
