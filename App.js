@@ -13,7 +13,12 @@ const App = () => {
   const [infoModal, setInfoModal] = useState(false);
   const [bmi, setBmi] = useState((weight/Math.pow(height/100,2)).toFixed(2));
 
+  const calculateBMI = () => {
+    console.log('it works');
+  }
+
   const toggleModal = () => {
+    visible !== null ? calculateBMI() : null ;
     setVisible(!visible);
   };
 
