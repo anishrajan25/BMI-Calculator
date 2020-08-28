@@ -10,9 +10,14 @@ const App = () => {
   const [age, setAge] = useState(25);
   const [weight, setWeight] = useState(50);
   const [visible, setVisible] = useState(false);
+  const [infoModal, setInfoModal] = useState(false);
 
   const toggleModal = () => {
     setVisible(!visible);
+  };
+
+  const toggleInfoModal = () => {
+    setInfoModal(!infoModal);
   };
 
   return(
@@ -28,8 +33,50 @@ const App = () => {
             <Text style={{color: 'white', fontSize: 12}}>by anishrajan</Text>
           </View>
         }
-        rightComponent={{ icon: 'info', color: '#fff' }}
+        rightComponent={
+          <Icon 
+            iconStyle={{paddingRight: 5}}
+            size={25}
+            name='info-circle'
+            type='font-awesome-5'
+            color='#ffffff' 
+            onPress={toggleInfoModal}
+          />
+        }
       />
+
+      <Modal
+        animationType="slide"
+        visible={infoModal}
+        transparent={true}
+        onRequestClose={toggleInfoModal}
+      >
+        <View style={{...styles.container, justifyContent: 'center', alignContent: 'center', marginTop: 60}}>
+          <View style={{...styles.inputView, margin: 30, marginVertical: 50}}>
+            <View style={{flex: 2, justifyContent: 'center', alignContent: 'center'}}>
+              <Text style={{  color: 'white', fontSize: 25 }}>Analysis Complete</Text>
+
+            </View>
+            <View style={{flex: 9, justifyContent: 'center', alignContent: 'center'}}>
+              <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>Your Body Mass Index Is</Text>
+              <Text style={{ textAlign: 'center', color: 'white', fontSize: 50, margin: 5, fontWeight: 'bold' }}>24.5</Text>
+              <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}>You are Normal</Text>
+
+            </View>
+            <View style={{flex: 3, justifyContent: 'center', alignContent: 'center'}}>
+              <Button
+                title="Go Back"
+                containerStyle={{alignSelf: 'center'}}
+                buttonStyle={{backgroundColor: '#25A1CF', paddingHorizontal: 30, paddingVertical: 10, borderRadius:20}}
+                titleStyle={{fontSize: 18}}
+                raised
+                onPress={toggleInfoModal}
+              />
+
+            </View>
+          </View>
+        </View>
+      </Modal>
       
       <View style={{justifyContent: 'center', flex: 4, flexDirection: 'row'}}>
         <TouchableOpacity 
