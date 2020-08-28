@@ -1,6 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Slider } from 'react-native';
+import { StyleSheet, Text, View, Slider, StatusBar } from 'react-native';
+import { Icon } from "react-native-elements";
 
 const App = () => {
 
@@ -8,21 +8,36 @@ const App = () => {
 
   return(
     <View style={styles.container}>
-      <StatusBar style="auto" />
-      <View style={styles.inputView}>
-        <Text style={styles.inputHeading}>Height</Text>
-        <Text style={styles.text}>{String(height) + ' cm'}</Text>
-        <Slider
-          thumbTintColor='#25A1CF'
-          minimumTrackTintColor="#25A1CF"
-          style={{marginVertical: 10}}
-          step={1}
-          maximumValue={300}
-          onValueChange={(value) => setHeight(value)}
-          value={height}
-        />
+      <StatusBar barStyle="light-content" backgroundColor="#080C1E" />
+      <View style={{flexDirection: 'row', height: 50, paddingTop: 5, paddingHorizontal: 20}}>
+        <View style={{ flex: 9}}>
+          <Text style={{color: 'white', fontSize: 20}}>BMI Calculator</Text>
+          <Text style={{color: 'white', fontSize: 12}}>by anishrajan</Text>
+        </View>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <Icon
+            size={20}
+            name='info-circle'
+            type='font-awesome-5'
+            color='#ffffff'  
+          />
+        </View>
       </View>
-      
+      <View style={{justifyContent: 'center', flex: 1}}>
+        <View style={styles.inputView}>
+          <Text style={styles.inputHeading}>Height</Text>
+          <Text style={styles.text}>{String(height) + ' cm'}</Text>
+          <Slider
+            thumbTintColor='#25A1CF'
+            minimumTrackTintColor="#25A1CF"
+            style={{marginVertical: 10}}
+            step={1}
+            maximumValue={300}
+            onValueChange={(value) => setHeight(value)}
+            value={height}
+          />
+        </View>
+      </View>
     </View>
   );
 }
@@ -30,8 +45,6 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
     backgroundColor: "#080C1E"
   },
   text: {
@@ -50,7 +63,7 @@ const styles = StyleSheet.create({
   inputHeading: {
     color: "#ffffff",
     textAlign: 'center',
-    marginVertical: 5,
+    marginTop: 5,
     fontSize: 20
   }
 });
