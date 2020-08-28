@@ -7,6 +7,7 @@ const App = () => {
   const [height, setHeight] = useState(150);
   const [gender, setGender] = useState('');
   const [age, setAge] = useState(1);
+  const [weight, setWeight] = useState(1);
 
   return(
     <View style={styles.container}>
@@ -106,7 +107,7 @@ const App = () => {
             <Text style={{...styles.inputHeading, fontSize: 15}}>WEIGHT</Text>
           </View>
           <View style={{flex: 4, justifyContent:'center'}}>
-            <Text style={{...styles.text, fontSize: 48}} >78</Text>
+            <Text style={{...styles.text, fontSize: 48}} >{weight}</Text>
           </View>
           <View style={{ flex: 3, flexDirection: 'row',justifyContent:'center', alignItems: 'center'}}>
             <View style={{flex: 4}}>
@@ -117,6 +118,7 @@ const App = () => {
                 name='minus'
                 type='font-awesome-5'
                 color='#25A1CF'  
+                onPress={() => setWeight( weight===1 ? weight : weight-1 )} 
               />
             </View>
             <View style={{flex: 3}}>
@@ -127,6 +129,7 @@ const App = () => {
                 name='plus'
                 type='font-awesome-5'
                 color='#25A1CF'  
+                onPress={() => setWeight( weight+1 )}
               />
             </View>
           </View>
