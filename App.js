@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Slider, StyleSheet, Text, View, StatusBar, TouchableOpacity } from 'react-native';
-import {  Icon } from "react-native-elements";
+import {  Icon, Header } from "react-native-elements";
 
 const App = () => {
 
@@ -9,21 +9,20 @@ const App = () => {
 
   return(
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#080C1E" />
-      <View style={{flexDirection: 'row', paddingTop: 5, paddingHorizontal: 20, flex: 1}}>
-        <View style={{ flex: 9}}>
+      <Header
+      backgroundColor = "#080C1E"
+      placement= 'left'
+      statusBarProps={{barStyle: 'light-content', backgroundColor: '#080C1E'}}
+      containerStyle={{borderWidth: 0}}
+      leftComponent={
+        <View style={{ flex: 1 }}>
           <Text style={{color: 'white', fontSize: 20}}>BMI Calculator</Text>
           <Text style={{color: 'white', fontSize: 12}}>by anishrajan</Text>
         </View>
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <Icon
-            size={20}
-            name='info-circle'
-            type='font-awesome-5'
-            color='#ffffff'  
-          />
-        </View>
-      </View>
+      }
+      rightComponent={{ icon: 'info', color: '#fff' }}
+    />
+      
       <View style={{justifyContent: 'center', flex: 4, flexDirection: 'row'}}>
         <TouchableOpacity 
           style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center', backgroundColor: gender === 'male' ? 'rgba(24,29,52,0.8)': 'rgba(24,29,52,0.3)'}}
@@ -107,3 +106,22 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+/*
+
+<View style={{flexDirection: 'row', paddingTop: 5, paddingHorizontal: 20, flex: 1}}>
+  <View style={{ flex: 9}}>
+    <Text style={{color: 'white', fontSize: 20}}>BMI Calculator</Text>
+    <Text style={{color: 'white', fontSize: 12}}>by anishrajan</Text>
+  </View>
+  <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <Icon
+      size={20}
+      name='info-circle'
+      type='font-awesome-5'
+      color='#ffffff'  
+    />
+  </View>
+</View>
+
+*/
