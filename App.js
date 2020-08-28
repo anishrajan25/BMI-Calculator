@@ -51,17 +51,17 @@ const App = () => {
         transparent={true}
         onRequestClose={toggleInfoModal}
       >
-        <View style={{...styles.container, justifyContent: 'center', alignContent: 'center', marginTop: 60}}>
-          <View style={{...styles.inputView, margin: 30, marginVertical: 100}}>
+        <View style={{...styles.container, justifyContent: 'center', alignContent: 'center', marginTop: 'auto'}}>
+          <View style={{...styles.inputView, margin: 30, marginVertical: 100, paddingHorizontal: 20}}>
             <Avatar rounded source={ require('./assets/IMG-20180921-WA0019-01.jpeg')} size='xlarge' />
-            <View style={{flex: 2, justifyContent: 'center', alignContent: 'center'}}>
-              <Text style={{  color: 'white', fontSize: 25 }}></Text>
+            <View style={{flex: 4, justifyContent: 'center', alignContent: 'center'}}>
+              <Text style={{  color: 'white', fontSize: 15, margin: 5, textAlign: 'center', paddingTop: 30 }}>One of the first few apps I made while on my journey to learn React Native</Text>
 
             </View>
-            <View style={{flex: 9, justifyContent: 'center', alignContent: 'center'}}>
-              <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}></Text>
-              <Text style={{ textAlign: 'center', color: 'white', fontSize: 50, margin: 5, fontWeight: 'bold' }}></Text>
-              <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, margin: 5 }}></Text>
+            <View style={{flex: 10, justifyContent: 'center', alignContent: 'center'}}>
+              <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, margin: 5 }}>You can find the whole source code on github.com/anishrajan25</Text>
+              <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, margin: 5, fontWeight: 'bold' }}>Made by Anish Rajan</Text>
+              <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, margin: 5 }}>A passionate learner and obsessive seeker of IT knowledge</Text>
 
             </View>
             <View style={{flex: 3, justifyContent: 'center', alignContent: 'center'}}>
