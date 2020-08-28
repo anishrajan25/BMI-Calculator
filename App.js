@@ -26,7 +26,7 @@ const App = () => {
       </View>
       <View style={{justifyContent: 'center', flex: 4, flexDirection: 'row'}}>
         <TouchableOpacity 
-          style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center', backgroundColor: gender === 'male' ? 'rgba(24,29,52,0.8)': 'rgba(24,29,52,0.5)'}}
+          style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center', backgroundColor: gender === 'male' ? 'rgba(24,29,52,0.8)': 'rgba(24,29,52,0.3)'}}
           onPress={() => setGender(gender==='male'? '' : 'male')}
         >
           <Icon
@@ -38,7 +38,7 @@ const App = () => {
           <Text style={{color: 'white', marginTop: 10}}>MALE</Text>
         </TouchableOpacity>
         <TouchableOpacity 
-          style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center', backgroundColor: gender === 'female' ? 'rgba(24,29,52,0.8)': 'rgba(24,29,52,0.5)' }}
+          style={{...styles.inputView, justifyContent: 'center', flex: 1, alignItems: 'center', backgroundColor: gender === 'female' ? 'rgba(24,29,52,0.8)': 'rgba(24,29,52,0.3)' }}
           onPress={() => setGender(gender==='female'? '' : 'female')}
         >
           <Icon
